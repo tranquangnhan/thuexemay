@@ -173,7 +173,7 @@
                         <div class="dropdown-divider"></div>
     
                         <!-- item-->
-                        <a href="{{URL::to("quantri/logout")}}" class="dropdown-item notify-item">
+                        <a href="{{URL::to("dang-xuat")}}" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Đăng xuất</span>
                         </a>

@@ -15,6 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
+       
         $data= Xe::all();
        return view('Admin.XeMay.index',compact('data'));
     }

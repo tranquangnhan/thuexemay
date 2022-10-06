@@ -19,7 +19,7 @@
     <i class="fa fa-empire"></i>
     <h2>Đăng Nhập</h2>
 
-    <form action="{{URL::to("quantri/login")}}" method="post" >
+    <form action="{{URL::to("dang-nhap")}}" method="post" >
         @csrf
         @if(session('thongbao'))
             <div class="alert alert-warning alert-dismissible fade show rounded-pill mb-2" role="alert">

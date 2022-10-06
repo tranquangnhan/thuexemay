@@ -25,10 +25,10 @@ class PhanQuyenAdmin
                 return $next($request);
             }
             else{
-                return redirect('/quantri/login')->with('thongbao', 'Bạn không phải là ADMIN');;
+                return redirect('dang-nhap')->with('thongbao', 'Bạn không phải là ADMIN');;
             }
         }else{
-            return redirect('/quantri/login');
+            return redirect('dang-nhap');
         }
     }
 }
