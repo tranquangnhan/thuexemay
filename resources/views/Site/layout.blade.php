@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('tainguyen/asset/css') }}/main.css">
     <link rel="stylesheet" href="{{ asset('tainguyen/asset/css') }}/grid.css">
     <link rel="stylesheet" href="{{ asset('tainguyen/asset/css') }}/search.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body>
     <!-- Phần Đầu -->
@@ -30,7 +31,7 @@
                     </div>
                     <div class="header__top-right">
                         <ul class="header__top-right--list">
-                            <li class="header__top-right--item">TRANG CHỦ</li>
+                            <li class="header__top-right--item"><a href="/" class="header__top-right--item list-tour">TRANG CHỦ </a></li>
                             <li class="header__top-right--item">BẢNG GIÁ</li>
                             <li class="header__top-right--item list-policy">CHÍNH SÁCH
                                 <i class="fa-solid fa-angle-down"></i>
@@ -195,7 +196,7 @@
     <div class="mess-chat">
         <img src="./asset/img/img-contact/icon-messenger.png" alt="">
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="./tainguyen/app.js"></script>
     <script src="./tainguyen/search.js"></script>
 </body>

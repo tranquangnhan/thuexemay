@@ -239,7 +239,7 @@ section#search-suggest-button {
   align-self: center;
   box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
   position: relative;
-  top: 20%;
+  top: 10%;
   margin: auto;
   border-radius: 6px;
   animation: form ease-in 0.3s;
@@ -333,7 +333,7 @@ section#search-suggest-button {
     display: none;
 }
 
-.modal__message {
+.modal__message,.modal__error {
     background-color: #fff;
     margin: auto;
     padding: 20px;
@@ -348,8 +348,11 @@ section#search-suggest-button {
     transform: translateX(calc(100% + 12px));
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
 }
+.modal__error {
+    border-left: 6px solid red !important;
+}
 
-.modal__message.active {
+.modal__message.active,.modal__error.active {
     transform: translateX(0%);
 }
 

@@ -11,47 +11,9 @@
                         <p>Chúng tôi hiểu cảm giác của người đi thuê xe máy phải bỏ ra một số tiền để có được một chiếc xe đủ tốt, không gặp rắc rối khi đi trên đường. Tuy nhiên thật khó để tìm được một đơn vị cung cấp dịch vụ cho thuê xe uy tín, chất lượng hiện nay. TBE - tiên phong trở thành đơn vị số 1 về cung cấp dịch vụ thuê xe máy tự lái tại Việt Nam.</p>
                     </div>
                 </div>
-                <div class="col l-5">
-                    <div class="car-rental-wrapper">
-                        <div class="main-wrapper">
-                            <form method="post" action="#" id="book-form">
-                                <div class="inputs">
-                                    <div class="content locations">
-                                        <label for="location">THÔNG TIN NHẬN XE </label>
-                                        <br>
-                                        <input list="locations" id="location" type="text" placeholder="    Chọn địa điểm nhận xe">
-                                        <datalist id="locations">
-                                            <option value="139 Nguyễn Văn Linh Đà Nẵng">
-                                            <option value="06 Vũ Tôn Phan Sơn Trà Đà Nẵng">
-                                            <option value="256 Trường Chinh Đà Nẵng">
-                                            <option value="219 Nguyễn Đình Chiểu ngũ hành sơn Đà Nẵng">
-                                        </datalist>
-                                    </div>
-                                    <br>
-                                    <div class="content dates">
-                                        <div class="date-get">
-                                            <label for="date">NGÀY NHẬN XE</label>
-                                            <br>
-                                            <input type="text" onfocus="(this.type = 'date')" type="date" id="date" placeholder="Ngày nhận xe">
-                                        </div>
-                                        <br>
-                                        <div class="date-pay">
-                                            <label for="date">NGÀY TRẢ XE</label>
-                                            <br>
-                                            <input type="text" onfocus="(this.type = 'date')" id="date" placeholder="Ngày trả xe">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="content submit">
-                                        <div class="email-wrapper">
-                                            <input type="email" id="email" placeholder="    Email">
-                                        </div>
-                                        <button class="submit-btn" type="button">TÌM KIẾM</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                <div class="col l-5 center">
+                    <a href="/search"><button class="submit-btn" type="button">Đặt xe ngay</button></a>
+                    
                 </div> 
             </div>
         </div>

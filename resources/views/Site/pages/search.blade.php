@@ -1292,7 +1292,7 @@
 
                 <!-- Thuê xe -->
                 <div class="modal hide">
-                    <form action="" class="form__rent">
+                    <form class="form__rent">
                         <h3 class="form__heading">Thông tin thuê xe
                         </h3>
                         <div class="form__close">
@@ -1301,30 +1301,31 @@
                         <div class="spacer"></div>
                         <div class="form__group">
                             <label for="fullname" class="form__label">Tên của bạn</label>
-                            <input type="text" id="fullname" name="fullname" placeholder="VD: Phan Văn A" class="form__control">
+                            <input type="text" id="fullname" name="fullname" placeholder="VD: Phan Văn A" required class="form__control">
                             <span class="form__message"></span>
                         </div>
                         <div class="form__group">
                             <label for="phonenumber" class="form__label">Số điện thoại</label>
-                            <input type="number" id="phonenumber" name="phonenumber" placeholder="VD:0123456789" class="form__control">
+                            <input type="number" id="phonenumber" name="phonenumber" placeholder="VD:0123456789" required class="form__control">
                             <span class="form__message"></span>
                         </div>
                         <div class="form__group">
                             <label for="diadiem" class="form__label">Địa điểm nhận và trả</label>
-                            <input type="text" id="diadiem" name="diadiem" placeholder="VD:0123456789" class="form__control">
+                            <input type="text" id="diadiem" name="diadiem" placeholder="vd: Qui Nhơn" required class="form__control">
                             <span class="form__message"></span>
                         </div>
                         <div class="form__group">
                             <label for="ngaythue" class="form__label">Ngày Thuê</label>
-                            <input type="date" id="ngaythue" name="ngaythue" placeholder="VD:0123456789" class="form__control">
+                            <input type="date" id="ngaythue" name="ngaythue" placeholder="VD:0123456789" required class="form__control">
                             <span class="form__message"></span>
                         </div>
                         <div class="form__group">
                             <label for="ngaytra" class="form__label">Ngày Trả</label>
-                            <input type="date" id="ngaytra" name="ngaytra" placeholder="VD:0123456789" class="form__control">
+                            <input type="date" id="ngaytra" name="ngaytra" placeholder="VD:0123456789" required class="form__control">
                             <span class="form__message"></span>
                         </div>
-                        <button type="button" class="form__submit">Thuê Xe</button>
+                        <input type="hidden" name="csrf-token" content="{{ csrf_token() }}">
+                        <button type="button" class="form__submit" onclick="submitFunction()">Thuê Xe</button>
                     </form>
                 </div>
                 <!-- Thông báo thành công -->
@@ -1338,6 +1339,18 @@
                     </div>
                     <i class="fa-solid fa-xmark success__close"></i>
                     <div class="progress"></div>
+                </div>
+
+                <div class="modal__error" id="modal__error">
+                    <div class="modal__title" >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div class="modal__content">
+                            <h1>Thuê Xe thất bại</h1>
+                            <i>Vui lòng đăng nhập trước khi thuê xe</i>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-xmark success__close"></i>
+                    <div class="progress-2" id="progress-2"></div>
                 </div>
 
                 <h1 id="showtext"></h1>

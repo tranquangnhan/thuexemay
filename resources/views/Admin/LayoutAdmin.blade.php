@@ -188,18 +188,18 @@
             <div class="logo-box">
                 <a href="/quantri" class="logo logo-dark text-center">
                             <span class="logo-lg">
-                                <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80">
+                                {{-- <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80"> --}}
                             </span>
                     <span class="logo-sm">
-                                <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80">
+                                {{-- <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80"> --}}
                             </span>
                 </a>
                 <a href="/quantri" class="logo logo-light text-center">
                             <span class="logo-lg">
-                                <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80">
+                                {{-- <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80"> --}}
                             </span>
                     <span class="logo-sm">
-                                <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80">
+                                {{-- <img src="{{ asset('Admin/assets') }}/images/logo.svg" alt="" height="80"> --}}
                             </span>
                 </a>
             </div>
@@ -223,7 +223,7 @@
                      title="Mat Helme" style="object-fit: cover" class="rounded-circle img-thumbnail avatar-md">
                 <div class="dropdown">
                     <a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown"
-                       aria-expanded="false">{{auth()->user()->name}}</a>
+                       aria-expanded="false">{{auth()->user()->email}}</a>
                     <div class="dropdown-menu user-pro-dropdown">
     
                         <!-- item-->
@@ -274,12 +274,17 @@
                             <li class="menu-title">Chung</li>
                             <!--- Cơ Sở -->
                             <li>
-                                <a href="/quantri">
+                                <a href="quantri/xe">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Thuê xe</span>
+                                    <span> Danh Sách Xe</span>
                                 </a>
                             </li>
-    
+                            <li>
+                                <a href="quantri/thue-xe">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> Thuê Xe</span>
+                                </a>
+                            </li>
     
                      
                     </ul>
@@ -374,7 +379,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    2021 &copy; Website được tạo bởi <a href="">Fbeauty</a>
+                    2022 &copy; Website được tạo bởi <a href="">Hoàng Hải</a>
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-right footer-links d-none d-sm-block">

@@ -66,6 +66,9 @@ class IndexController extends Controller
      */
     public function show($id)
     {
+
+        $data  = xe::find($id);
+        return view('Admin.XeMay.detail',compact('data'));
     }
 
     /**

@@ -676,3 +676,9 @@ html {
     cursor: pointer;
     color: #fff;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}

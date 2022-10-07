@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DangNhapController;
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Admin\ThueXeController;
 use App\Http\Controllers\Site\IndexController as SiteIndexController;
 use App\Http\Controllers\Site\SearchXeController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,9 @@ Route::group(['prefix' => 'quantri', 'middleware' => 'phanquyen'], function () {
 
     Route::resource('/',IndexController::class);
     Route::resource('/xe',IndexController::class);
+    Route::resource('/thue-xe',ThueXeController::class);
+    Route::get('/thue-xe/huy/{id}',[ThueXeController::class,"huy"]);
+    Route::get('/thue-xe/duyet/{id}',[ThueXeController::class,"duyet"]);
 });
 
 Route::group(['prefix' => '/'], function () {
@@ -41,5 +45,5 @@ Route::group(['prefix' => '/'], function () {
      */
     Route::get('', [SiteIndexController::class, "index"]);
     Route::get('/search', [SearchXeController::class, "index"]);
- 
+    Route::post('thuexe', [SearchXeController::class, 'thuexe']);
 });

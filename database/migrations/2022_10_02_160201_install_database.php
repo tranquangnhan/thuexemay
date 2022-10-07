@@ -17,6 +17,7 @@ return new class extends Migration
      
         Schema::dropIfExists('nguoidung');
         Schema::dropIfExists('xe');
+        Schema::dropIfExists('thuexe');
        
         Schema::create('nguoidung', function (Blueprint $table) {
             $table->increments('id');
@@ -37,6 +38,21 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('thuexe', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('fullname',100);
+            $table->string('phonenumber',10);
+            $table->string('diadiem',255);
+            $table->date('ngaythue');
+            $table->date('ngaytra');
+            $table->integer('iduser')->NULL();
+            $table->integer('idxe')->NULL();
+            $table->tinyInteger('trangthai')->default(0);
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
 
         Schema::enableForeignKeyConstraints();
     }

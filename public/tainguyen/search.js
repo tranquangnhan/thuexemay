@@ -147,13 +147,13 @@ openModals.forEach((btn) => {
 
 closeModal.addEventListener('click', toggleModal);
 
-btnSubmit.addEventListener('click', toggleModal);
+// btnSubmit.addEventListener('click', toggleModal);
 
-modal.addEventListener('click', function(e) {
-    if(e.target == e.currentTarget){
-        toggleModal()
-    }
-})
+// modal.addEventListener('click', function(e) {
+//     if(e.target == e.currentTarget){
+//         toggleModal()
+//     }
+// })
 
 
 // Tắt mở thông tin xe
@@ -484,17 +484,73 @@ closeR15.addEventListener('click', toggleModalR15)
 
 
 // Thông báo
-btnSubmit.onclick = () => {
-    modalMessage.classList.add('active');
-    progress.classList.add('active');
-    alert('da thue')
-    // setTimeout(() => {
-    //     modalMessage.classList.remove('active');
-    // },5000);
+// btnSubmit.onclick = () => {
+//     modalMessage.classList.add('active');
+//     progress.classList.add('active');
+//     alert('da thue')
+//     // setTimeout(() => {
+//     //     modalMessage.classList.remove('active');
+//     // },5000);
 
-    // setTimeout(() => {
-    //     progress.classList.remove('active')
-    // }, 5300);
+//     // setTimeout(() => {
+//     //     progress.classList.remove('active')
+//     // }, 5300);
+// }
+
+function submitFunction(){
+
+    var formData = new FormData();
+    const fullname = document.getElementById('fullname').value;
+    const phonenumber = document.getElementById('phonenumber').value;
+    const diadiem = document.getElementById('diadiem').value;
+    const ngaythue = document.getElementById('ngaythue').value;
+    const ngaytra = document.getElementById('ngaytra').value;
+    formData.append('fullname', fullname);
+    formData.append('phonenumber', phonenumber);
+    formData.append('diadiem', diadiem);
+    formData.append('ngaythue', ngaythue);
+    formData.append('ngaytra', ngaytra);
+    formData.append('idxe', window.localStorage.getItem('idxe'));
+
+    if(fullname == '' || phonenumber == '' || diadiem == '' || ngaythue == '' || ngaytra == ''){
+        alert('Bạn phải điền đầy đủ thông tin');
+        return false;
+    }
+
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        },
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "thuexe",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            if(response.status== false && response.keyerror == 1){
+                let modelErr = document.getElementById('modal__error');
+                let progressErr = document.getElementById('progress-2');
+                modelErr.classList.add('active');
+                progressErr.classList.add('active');
+                setTimeout(() => {
+                    modelErr.classList.remove('active')
+                }, 5300);
+            }else{
+                modal.classList.toggle('hide');
+
+                modalMessage.classList.add('active');
+                progress.classList.add('active');
+                setTimeout(() => {
+                    modalMessage.classList.remove('active')
+                }, 5300);
+            }
+        }
+    });
+
 }
 
 successClose.onclick = () => {
@@ -504,5 +560,3 @@ successClose.onclick = () => {
         progress.classList.remove('active')
     },300);
 }
-
-
